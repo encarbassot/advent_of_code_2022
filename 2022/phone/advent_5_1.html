@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code of advent</title>
+    <style>
+    	/*html{scroll-behavior:smooth}*/
+        #result pre{
+            padding: 1rem;
+            display: block;
+        }
+        #result pre +pre{border-top: 2px solid black;}
+        .error{color:red;}
+    </style>
+    <script type="text/javascript" defer>
+   
+   
+    
+    
+    
+
+function out(value){
+	let result =""
+	for(let i=0;i<arguments.length;i++){
+		result+=arguments[i]
+		if(i<arguments.length-1){
+			result+=" | "
+		}
+  	}
+	const resultDOM = document.getElementById("result")
+	const resultPre = document.createElement("PRE")
+	resultPre.innerHTML=result
+	resultDOM.appendChild(resultPre)
+}
+   
+  window.onload=()=>{
+ 
+
+window.addEventListener('error', (e) => {
+    	const txt = `[${e.lineno}:${e.colno}] ${e.type}: ${e.message}\n`;
+    	const resultDOM = document.getElementById("result")
+    	const resultPre = document.createElement("PRE")
+    	resultPre.classList.add("error")
+    	resultPre.innerHTML=txt
+    	resultDOM.appendChild(resultPre)
+    	
+    	
+    });
+   
+   
+  
+  /*
+ 
+ fetch('http://10.96.255.255:12345/Download/input.txt')
+ .then((response) => response.text())
+ .then((data) => coa(data.split("\n"),data));
+//*/
+
+
+//*
+coa(`14-50,14-50
+43-44,43-87
+55-99,51-96
+67-68,68-91
+8-8,27-73
+22-92,21-92
+51-95,51-51
+64-73,37-65
+21-72,37-76
+45-73,46-73
+35-38,36-39
+17-36,17-37
+98-98,17-99`.split("\n"))//*/
+
+
+/*
+coa(`2-4,6-8
+2-3,4-5
+5-7,7-9
+2-8,3-7
+6-6,4-6
+2-6,4-8
+12-37,37-37
+1-2,3-4
+1-3,2-4
+1-3,1-2
+1-3,1-3
+2-3,1-3`.split("\n"))//*/
+
+  }
+ 
+ 
+ 
+
+
+
+
+function coa(inps,raw){
+ 	
+ 	
+ 	let total=0
+ 	let ao=0
+ 	
+ 	
+    
+   
+   	for(line of inps){
+   		
+   		
+   		
+   		out(line)
+   		
+   		
+   		//out(line,itis)
+   	}
+   	
+   
+   	out("TOTAL:",total)
+   
+  
+ 
+}
+
+
+
+   
+function ch(a,b,c,d){
+		//C AB D
+   		if(c<=a&&b<=d){
+   			return true
+   			
+   		//A CD B
+   		}else if(a<=c && d<= b){
+   			return true
+   			
+   		//A C B D
+   		}else if(a<=c&& c<=b && b<=d){
+   		
+   			return true
+   		
+   		//C A D B
+   		}else if(c<=a && a<=d && d<=b){
+   			return true
+   		}
+   		return false
+}
+   
+  
+ 
+
+
+    </script>
+</head>
+<body>
+<a href="Download/input.txt" >Input</a>
+	<button onclick="window.scrollTo(0,document.body.scrollHeight);">bottom</button>
+    <div id="result"></div>
+</body>
+</html>

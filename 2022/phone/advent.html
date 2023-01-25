@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        #result pre{
+            padding: 1rem;
+            display: block;
+        }
+        #result pre +pre{
+
+            border-top: 2px solid black;
+        }
+    </style>
+    <script type="text/javascript" defer>
+   
+   
+    
+    
+    
+    function out(value){
+    const resultDOM = document.getElementById("result")
+    const resultPre = document.createElement("PRE")
+    resultPre.innerHTML=value
+    resultDOM.appendChild(resultPre)
+    
+    
+    
+    }
+   
+  window.onload=()=>{
+  
+  //codeOfAdvent(`hosa `)
+  //*
+ 
+ fetch('http://10.96.255.255:12345/Download/input.txt')
+ .then((response) => response.text())
+ .then((data) => codeOfAdvent(data.split("\n"),data));
+//*/
+
+/*
+codeOfAdvent(`A X
+A Y
+A Z
+B X
+B Y
+B Z
+C X
+C Y
+C Z`.split("\n"))//*/
+
+
+
+/*
+codeOfAdvent(`A Y
+B X
+C Z`.split("\n"))//*/
+  }
+ 
+ 
+ 
+
+
+
+
+function codeOfAdvent(inps,raw){
+ 	let p=["piedra","papel","tijeras"]
+ 	
+ 	
+ 	
+ 	let total=0
+ 	
+     
+    //out(total+" "+inps)
+   
+  
+ 	for(line of inps){
+ 		let p=line.split(' ')
+ 		let a=p[0]
+ 		let b=p[1]
+ 		
+ 		if(b=="X"){//rock
+ 			if(a=="A"){//rock
+ 				total+=1+3
+ 			}else if(a=="B"){//paper
+ 				total+=1+0
+ 			}else if(a=="C"){///1sissors
+ 				total+=1+6
+ 			}
+ 		}else if(b=="Y"){//paper
+ 			if(a=="A"){//rock
+ 				total+=2+6
+ 			}else if(a=="B"){//paper
+ 				total+=2+3
+ 			}else if(a=="C"){//sissors
+ 				total+=2+0
+ 			}
+ 		}else if(b=="Z"){//sissors
+ 			if(a=="A"){//rock
+ 				total+=3+0
+ 			}else if(a=="B"){//paper
+ 				total+=3+6
+ 			}else if(a=="C"){//sissors
+ 				total+=3+3
+ 			}
+ 		}
+ 	}
+ out(total)
+}
+   
+   
+   
+  
+ 
+
+
+    </script>
+</head>
+<body>
+<a href="Download/input.txt" >Input</a>
+
+    <div id="result"></div>
+    
+</body>
+</html>

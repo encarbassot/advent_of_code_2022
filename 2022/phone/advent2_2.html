@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        #result pre{
+            padding: 1rem;
+            display: block;
+        }
+        #result pre +pre{
+
+            border-top: 2px solid black;
+        }
+    </style>
+    <script type="text/javascript" defer>
+   
+   
+    
+    
+    
+    function out(value){
+    const resultDOM = document.getElementById("result")
+    const resultPre = document.createElement("PRE")
+    resultPre.innerHTML=value
+    resultDOM.appendChild(resultPre)
+    
+    
+    
+    }
+   
+  window.onload=()=>{
+  
+  //codeOfAdvent(`hosa `)
+  //*
+ 
+ fetch('http://10.96.255.255:12345/Download/input.txt')
+ .then((response) => response.text())
+ .then((data) => codeOfAdvent(data.split("\n"),data));
+//*/
+
+/*
+codeOfAdvent(`A X
+A Y
+A Z
+B X
+B Y
+B Z
+C X
+C Y
+C Z`.split("\n"))//*/
+
+
+
+/*
+codeOfAdvent(`A Y
+B X
+C Z`.split("\n"))//*/
+  }
+ 
+ 
+ 
+
+
+
+
+function codeOfAdvent(inps,raw){
+ 	let p=["piedra","papel","tijeras"]
+ 	
+ 	
+ 	
+ 	let total=0
+ 	
+     
+    //out(total+" "+inps)
+   
+  
+ 	for(line of inps){
+ 		let pa=line.split(' ')
+ 		let a=pa[0]
+ 		let b=pa[1]
+ 		
+ 		let r=1
+ 		let p=2
+ 		let s=3
+ 		
+ 		if(b=="X"){//loose
+ 			if(a=="A"){//rock
+ 				total+=0+s
+ 			}else if(a=="B"){//paper
+ 				total+=0+r
+ 			}else if(a=="C"){///1sissors
+ 				total+=0+p
+ 			}
+ 		}else if(b=="Y"){//draw
+ 			if(a=="A"){//rock
+ 				total+=3+r
+ 			}else if(a=="B"){//paper
+ 				total+=3+p
+ 			}else if(a=="C"){//sissors
+ 				total+=3+s
+ 			}
+ 		}else if(b=="Z"){//win
+ 			if(a=="A"){//rock
+ 				total+=6+p
+ 			}else if(a=="B"){//paper
+ 				total+=6+s
+ 			}else if(a=="C"){//sissors
+ 				total+=6+r
+ 			}
+ 		}
+ 	}
+ out(total)
+}
+   
+   
+   
+  
+ 
+
+
+    </script>
+</head>
+<body>
+<a href="Download/input.txt" >Input</a>
+
+    <div id="result"></div>
+    
+</body>
+</html>

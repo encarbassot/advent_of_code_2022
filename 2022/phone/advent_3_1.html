@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        #result pre{
+            padding: 1rem;
+            display: block;
+        }
+        #result pre +pre{
+
+            border-top: 2px solid black;
+        }
+    </style>
+    <script type="text/javascript" defer>
+   
+   
+    
+    
+    
+function out(value){
+	let result =""
+    for(let i=0;i<arguments.length;i++){
+    	result+=arguments[i]
+    	if(i<arguments.length-1){
+    		result+=", "
+    	}
+  	}
+    const resultDOM = document.getElementById("result")
+    const resultPre = document.createElement("PRE")
+    resultPre.innerHTML=result
+    resultDOM.appendChild(resultPre)
+}
+   
+  window.onload=()=>{
+  
+  
+  /*
+ 
+ fetch('http://10.96.255.255:12345/Download/input.txt')
+ .then((response) => response.text())
+ .then((data) => coa(data.split("\n"),data));
+//*/
+
+//*
+coa(`A X
+A Y
+A Z
+B X
+B Y
+B Z
+C X
+C Y
+C Z`.split("\n"))//*/
+
+
+  }
+ 
+ 
+ 
+
+
+
+
+function coa(inps,raw){
+ 	
+ 	
+ 	let total=0
+ 	
+     
+    out("hola","adeu")
+   
+  
+ 
+}
+   
+   
+   
+  
+ 
+
+
+    </script>
+</head>
+<body>
+<a href="Download/input.txt" >Input</a>
+
+    <div id="result"></div>
+    
+</body>
+</html>

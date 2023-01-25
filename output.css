@@ -1,0 +1,58 @@
+html{
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+#result p{
+    padding: 0.5rem;
+    color: white;
+}
+#result p *{
+    display: inline;
+    padding: 0 .1rem;
+}
+
+#result p>*{
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+
+#result p>* + *{
+    border-left: 2px solid rgb(95, 95, 95);
+}
+
+#result p + p{
+    border-top: 2px solid black;
+}
+
+#result>p>p>p{
+    display: block;
+    border:none;
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.error{color:red;}
+.number{color: rgb(3, 160, 68);}
+.string{color: rgb(218, 87, 0);}
+.boolean{color:rgb(77, 154, 255)}
+
+.box{
+    background-color: white;
+    padding: 0 !important;
+    height: 7px;
+    width: 7px;
+    border-bottom: 1px solid gray;
+}
+
+.heatMap p{
+    border:0 !important;
+    display:block !important;
+    margin: 0;
+    height: 7px;
+
+}

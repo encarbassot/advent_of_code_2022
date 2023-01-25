@@ -1,0 +1,1 @@
+console.log("2018 day1 part 1")
